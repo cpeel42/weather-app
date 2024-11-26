@@ -34,3 +34,14 @@ h5,
 h6 {
   text-wrap: balance;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  flex: auto;
+  background-color:gainsboro
+}

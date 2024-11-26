@@ -1,16 +1,16 @@
 class Weather {
     constructor(searchTerm) {
       this.searchTerm = searchTerm
-      this.description = null;
+      this.result = null
     }
-  
+
     async fetchWeather() {
       try {
         const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${this.searchTerm}?key=LLEHL2QF6VDENHD46GBVK269H`, {mode: 'cors'})
-        const result = await response.json();
-        this.description = result.description
+        this.result = await response.json();
+        return this.result
       } catch (error) {
-        console.log(error);
+        console.log("Error fetching weather data:", error);
       }
     }
   }
